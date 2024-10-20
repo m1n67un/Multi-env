@@ -17,7 +17,7 @@ https://crates.io/crates/Multi-env
 
 ```toml
 [dependencies]
-multi_env = "0.0.1"
+multi_env = "0.0.2"
 ```
 
 2. Use in your code
