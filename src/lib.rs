@@ -1,8 +1,6 @@
 mod handlers;
 mod models;
 
-use std::env;
-
 use clap::Parser;
 use handlers::load::load_yaml_to_env;
 use models::args::Args;
@@ -13,8 +11,8 @@ pub fn set_ok(file_type: &str) {
     
     match file_type {
         "env" => {
-            dotenv::from_filename(format!(".env.{}", &environment)).ok();
-            dotenv::dotenv().ok();
+            dotenv::from_filename(format!(".env.{}", &environment)).ok().expect("The specified file does not exist.");
+            dotenv::dotenv().ok().expect("The specified file does not exist.");
         },
         "yaml" | "yml" => {
             let common_path = format!("common.yaml");
@@ -27,4 +25,4 @@ pub fn set_ok(file_type: &str) {
             println!("No configuration has been specified. As the default value is 'env', the program will execute using the 'env' configuration.");
         }
     }
-}
+}   
