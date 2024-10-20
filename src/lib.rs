@@ -11,15 +11,15 @@ pub fn set_ok(file_type: &str) {
     
     match file_type {
         "env" => {
-            dotenv::from_filename(format!(".env.{}", &environment)).ok().expect("The specified file does not exist.");
-            dotenv::dotenv().ok().expect("The specified file does not exist.");
+            dotenv::from_filename(format!(".env.{}", &environment)).ok();
+            dotenv::dotenv().ok();
         },
         "yaml" | "yml" => {
             let common_path = format!("common.yaml");
-            load_yaml_to_env(&common_path).expect("The specified file does not exist.");
+            load_yaml_to_env(&common_path).ok();
 
             let file_path = format!("{}.{}", &environment, file_type);
-            load_yaml_to_env(&file_path).expect("The specified file does not exist.");
+            load_yaml_to_env(&file_path).ok();
         },
         _ => {
             println!("No configuration has been specified. As the default value is 'env', the program will execute using the 'env' configuration.");
