@@ -1,0 +1,4 @@
+RUST:
+  ENV: development
+
+debug: true
