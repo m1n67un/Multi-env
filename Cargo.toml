@@ -1,10 +1,6 @@
 [package]
-name = "multi-env"
-version = "0.1.0"
-authors = ["m1n67un <rkdalsrbs0@naver.com>"]
-description = "An elegant banner library that enhances project launches with eye-catching terminal displays and helpful assistance."
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/m1n67un/Multi-env"
+name = "Multi-env"
+edition = "2021"
 
 [dependencies]
 clap = { version = "4.4.6", features = ["derive"] }

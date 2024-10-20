@@ -1,6 +1,8 @@
 mod handlers;
 mod models;
 
+use std::env;
+
 use clap::Parser;
 use handlers::load::load_yaml_to_env;
 use models::args::Args;
@@ -24,5 +26,8 @@ pub fn set_ok(file_type: &str) {
         _ => {
             println!("No configuration has been specified. As the default value is 'env', the program will execute using the 'env' configuration.");
         }
+    }
+    for (key, value) in env::vars() {
+        println!("{}: {}", key, value);
     }
 }
