@@ -27,7 +27,4 @@ pub fn set_ok(file_type: &str) {
             println!("No configuration has been specified. As the default value is 'env', the program will execute using the 'env' configuration.");
         }
     }
-    for (key, value) in env::vars() {
-        println!("{}: {}", key, value);
-    }
 }
