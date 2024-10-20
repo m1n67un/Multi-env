@@ -2,6 +2,9 @@
 
 This project is an environment variable branching library written in Rust. It helps users easily manage configurations for various environments (development, testing, production, etc.).
 
+## Libraries registered in Cargo(Rust)
+https://crates.io/crates/Multi-env
+
 ## Features
 
 - Support for environment-specific configuration files (.env, YAML, etc.)
