@@ -17,13 +17,14 @@ https://crates.io/crates/Multi-env
 
 ```toml
 [dependencies]
-multi_env = "0.0.2"
+multi_env = "0.0.3"
 ```
 
 2. Use in your code
 
 ```rust
 use multi_env::set_ok;
+use std::env;
 
 fn main() {
     // Set the configuration type to "env" (uses .env files)
@@ -34,6 +35,9 @@ fn main() {
 
     // Set the configuration type to "yaml" (uses YAML files with .yaml extension)
     // set_ok("yaml");
+
+    // USE ENV "RUST.ENV"
+    env::var("RUST.ENV").unwrap_or_else(|_| String::from(""));
 }
 ```
 In this example, "env" specifies the configuration file format to use. "env" uses .env files, while "yaml" uses YAML files.
